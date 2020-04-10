@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <title>ClipCrop</title>
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
+<link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/jquery.Jcrop.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.Jcrop.min.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/cropper.js"></script>
+    <script src="js/imageprocess.js"></script>
+</head>
+
+<body>
+    
+    <!-- Empty Toast -->
+    
+    <div class="toast"></div>
+    
+    <!-- Empty Hidden Form -->
+    
+    <form id="testForm">
+	<input type="hidden" name="name" id="nme" val=""/>
+	<input type="hidden" name="site" id="ste" val=""/>
+	<input type="hidden" name="feature" id="freq" val=""/>
+	<input type="hidden" name="reason" id="rson" val=""/>
+	<input type="hidden" name="importance" id="imp" val=""/>
+    </form>
+    
+    <!-- LightBox -->
+    
+    <div id="boxbg"></div>
+    <div id="boxform">
+	<div class="labels" id="intro">
+	    Please use this form to suggest features you would like to see implemented into ClipCrop. All suggestions will be reviewed and feedback given as to yes or no.
+	</div>
+	<div class="labels"></div>
+	<div class="labels">Name</div>
+	<div class="form" id="name" contenteditable="true"></div>
+	<div class="labels">Site</div>
+	<div class="form" id="site" contenteditable="true"></div>
+	<div class="labels">Feature Request</div>
+	<div class="form" id="feature" contenteditable="true"></div>
+	<div class="labels">Reason Why</div>
+	<div class="form" id="reason" contenteditable="true"></div>
+	<div class="labels">Importance</div>
+	<select class="selecter" id="selectForm">
+	    <option value="1">Low</option>
+	    <option value="2">Medium</option>
+	    <option value="3">High</option>
+	</select>
+	<div class="button" id="submit">Ask Me!</div>
+    </div>
+    
+    <!-- Menu Bar -->
+    <div class="topBar">
+	<!-- Button -->
+	<div class="menuItem" id="clearBtn" onclick="clearCanvas();">
+	    <img id="undo" src="imgs/undo.svg">
+		<p>Reset Image</p>
+	</div>
+	<!-- Script to Reset Canvas -->
+	<script>
+	    function clearCanvas()
+	    {
+		var c = document.getElementById("target");
+		var ctxClr = c.getContext("2d");
+		ctxClr.clearRect(0,0,c.width,c.height);
+	    
+		var c2 = document.getElementById("preview");
+		var ctxClr2 = c2.getContext("2d");
+		ctxClr2.clearRect(0,0,c.width,c.height);
+	    }
+	</script>
+	<!-- Button -->
+	<div class="menuItem" id="load">
+	    <img src="imgs/upload.svg">
+		<p>Load Image</p>
+	</div>
+	<!-- Load Image by calling file input click -->
+	 <script>
+	    $("#load").click(function() {
+		$("#uploader").click();
+	    });
+	</script>
+	<!-- Hidden input file type -->
+	<input type="file" id="uploader"/>
+	<div class="topHeader" id="headBtn"><p>ClipCrop</p></div>
+    </div>
+    
+    <!-- About box -->
+    
+    <div id="about">
+        <h4>ClipCrop</h4>
+        <h5>V1.1.7</h5>
+        <img src="imgs/cat.png"/>
+        <p id='caption'>My cat Weasley</p>
+        <p>Created by Ben Cleary</p>
+        <a id="featureBtn" href="#">Suggest a Feature</a>
+        <img id="cancelImg" src="imgs/cancel.svg">
+    </div>
+    
+    <!-- Main Canvas Holders -->
+    
+    <div class="holders">
+	<div class="inputHolder">
+	    <div class="contentH">Select Region to Crop</div>
+	    <canvas id="target" width="600" height="800">Not Supported</canvas>
+	</div>
+    
+	<div class="outputHolder">
+	    <div class="contentH">Your Output</div>
+		<!-- Output Preview Canvas -->
+		<canvas id="preview" width="300" height="300" style="overflow:hidden;"></canvas>
+		<!-- Button to save - ID must be Button -->
+		<div id='button'>
+		    Save Image
+		<img src="imgs/floppy.svg">    
+	    </div>
+	</div>
+    </div>
+    
+    
+    
+    
+</body>
+</html>

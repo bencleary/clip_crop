@@ -1,0 +1,433 @@
+/***
+**
+**
+** @Author Ben Cleary
+** @Style Sheet for ClipCrop
+**
+**
+***/
+
+@font-face {
+	font-family: 'geog_normal';
+	src: url('fonts/Geogtq-Sb.eot');
+	src: local('☺'), url('fonts/Geogtq-Sb.woff') format('woff'), url('fonts/Geogtq-Sb.ttf') format('truetype'), url('fonts/Geogtq-Sb.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'geog_bold';
+	src: url('fonts/Geog-BdIt.eot');
+	src: local('☺'), url('fonts/Geog-BdIt.woff') format('woff'), url('fonts/Geog-BdIt.ttf') format('truetype'), url('fonts/Geog-BdIt.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+margin: 0;
+padding: 0;
+height:100%;
+position: relative;
+background: #DFDFDF;
+font-family: geog_bold,Helvetica, Verdana, Sans-Serif;
+}
+
+html {
+height: 100%;
+}
+
+/***
+**
+**
+** Top Bar and Menu Styling
+**
+**
+***/
+
+.topBar {
+width:100%;
+height:40px;
+background: #4D4D4D;
+margin: 0;
+padding: 0;
+}
+
+.menuItem {
+width:140px;
+height: 40px;
+float: left;
+font-size: 0.8em;
+line-height: 40px;
+color: #6AC8FC;
+padding-right:15px;
+}
+
+.menuItem:hover {
+background: #424242;
+border-bottom:3px dashed #FDC64F;
+cursor: pointer; cursor: hand;
+}
+
+.menuItem img {
+width:40px;
+float: left;
+padding-left:15px;
+}
+
+/* Undo Img */
+
+#undo {
+width:30px;
+margin-top:5px;
+}
+
+.menuItem p {
+margin: 0;
+padding: 0;
+margin-left:-20px;
+
+}
+
+.topHeader {
+margin-top: 4px;
+margin-right: 4px;
+width:140px;
+height: 30px;
+float: right;
+font-size: 1.2em;
+font-weight: 300;
+border:1px dashed #FDC64F;
+cursor: pointer; cursor: hand;
+}
+
+.topHeader p {
+text-align: center;
+margin: 0;
+padding: 0;
+font-size:1.2em;
+color: #FDC64F;
+
+}
+
+/***
+**
+**
+** About Box
+**
+**
+***/
+
+#about {
+position: absolute;
+right:0;
+width:240px;
+height:400px;
+background: #4D4D4D;
+-webkit-box-shadow: 0px 8px 6px -6px #424242;
+-moz-box-shadow: 0px 8px 6px -6px #424242;
+box-shadow: 0px 8px 6px -6px #424242;
+}
+
+#about h5, h4, p, a {
+margin:0;
+padding: 0;
+text-align: center;
+}
+
+#about h4 {
+padding-top: 20px;
+font-size: 2em;
+font-weight: 200;
+color: #FDC64F;
+width:200px;
+margin:auto;
+}
+
+#about h5 {
+width:110px;
+font-size: 0.8em;
+margin:auto;
+font-weight: 200;
+color: #FDC64F;
+text-align: right;
+}
+
+#about img {
+display: block;
+width:120px;
+margin:auto;
+margin-top:40px;
+border-radius: 100px;
+border: 5px dashed #6AC8FC;
+-webkit-transition: all 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+-moz-transition: all 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+-o-transition: all 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+transition: all 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+#about img:hover {
+transform: rotate (360deg);
+-ms-transform:rotate(360deg); /* IE 9 */
+-webkit-transform:rotate(360deg);
+-moz-transform:rotate(360deg);
+-webkit-transition: all 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+-moz-transition: all 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+-o-transition: all 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+transition: all 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+#about #cancelImg {
+width:20px;
+border:none;
+position: absolute;
+right:230px;
+top:350px;
+background: #424242;
+box-shadow: 0px 0px 10px #424242;
+cursor: pointer; cursor: hand;
+}
+
+#about p {
+display: block;
+width:200px;
+font-size: 0.8em;
+text-align: center;
+margin: auto;
+color: #FDC64F;
+margin-top:75px;
+}
+
+p#caption {
+text-align: center;
+margin-top:5px;
+}
+
+#about a {
+display: block;
+text-decoration: none;
+color: #424242;
+font-weight: 400;
+font-size: 1em;
+width:100%;
+text-align: center;
+margin-top:3px;
+height:30px;
+line-height: 30px;
+background: #6AC8FC;
+position: absolute;
+bottom: 0;
+}
+
+/***
+**
+**
+** Main Holder & sub Compartments
+**
+**
+***/
+
+.holders {
+width:950px;
+margin-top:25px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.contentH {
+width:100%;
+background: #424242;
+text-align: center;
+font-weight:200;
+color: #6AC8FC;
+font-size: 1em;
+height:30px;
+line-height: 30px;
+}
+
+.inputHolder {
+float: left;
+}
+
+.outputHolder {
+float: left;
+height: 830px;
+width:350px;
+background: #7B898D;
+}
+
+.outputHolder canvas {
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+#preview {
+display: block;
+margin-top: 25px;
+width:300px;
+height:300px;
+border:5px dashed #363636;
+}
+
+/***
+**
+**
+** place ugly file upload far away
+**
+**
+***/
+
+#uploader {
+position: absolute;
+left:-4000px;
+}
+
+#target{
+display: block;
+float: left;
+margin:50px;
+}
+
+#button {
+margin-top:20px;
+border-top:1px dashed #424242;
+border-bottom:1px dashed #424242;
+width:300px;
+height:40px;
+margin-left: auto;
+margin-right: auto;
+line-height: 40px;
+font-weight: 300;
+color: #FDC64F;
+padding-top:5px;
+padding-bottom: 5px;
+padding-left:10px;
+padding-right:10px;
+cursor: pointer; cursor: hand;
+}
+
+#button:hover {
+background:#4D4D4D;
+border-bottom:1px dashed #FDC64F;
+border-top:1px dashed #FDC64F;
+}
+
+#button img {
+float: right;
+width: 30px;
+height: 30px;
+padding-top:5px;
+padding-bottom: 5px;
+}
+
+/***
+**
+**
+** Lightbox Contact Form
+**
+**
+***/
+
+#boxbg {
+position: absolute;
+left:0;
+right:0;
+top:0;
+bottom:0;
+z-index: 9999;
+width:100%;
+height:100vh;
+background: #000;
+opacity: 0.2;
+}
+
+#boxform {
+width:640px;
+height:480px;
+background: #fff;
+position: absolute;
+left: 0;
+right: 0;
+top:0;
+bottom: 0;
+z-index: 10000;
+margin:auto;
+box-shadow: 0px 0px 15px #000;
+border-radius: 5px;
+font-family: geog_normal;
+}
+
+.labels {
+font-size: 1em;
+width:90%;
+margin: auto;
+height: 30px;
+line-height: 30px;
+}
+
+.form {
+width:90%;
+min-height:30px;
+margin:auto;
+border: 1px dashed #000;
+line-height: 30px;
+border-radius: 5px;
+}
+
+#selectForm {
+display: block;
+width:90%;
+margin:auto;
+height: 30px;
+line-height: 30px;
+border-radius: 5px;
+}
+
+.button {
+width:100%;
+position: absolute;
+bottom:0;
+text-align: center;
+line-height: 30px;
+height: 30px;
+background: #2c82c9;
+color: #fff;
+}
+
+#intro {
+padding-top:20px;
+}
+
+/***
+**
+**
+** Toast Styles
+**
+**
+***/
+
+.toast {
+font-family: geog_bold;
+width:240px;
+height:50px;
+position: absolute;
+z-index: 10001;
+top: 15px;
+left: 15px;
+box-shadow: 0px 0px 10px #000;
+border-radius: 5px;
+font-size: 1em;
+font-weight: 500;
+line-height: 50px;
+text-align: center;
+}
+
+.success {
+background: #2CC990;
+color: #424242;
+}
+
+.error {
+background: #FC6042;
+color: #424242;
+}
